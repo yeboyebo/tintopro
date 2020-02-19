@@ -1,0 +1,13 @@
+.navigation .ui-menu-item{
+	display: inline-block;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.navigation .ui-menu-item a{
+	padding-left: 12px;
+	padding-right: 12px;
+}
+.cms-page-view img{
+    padding-left: 15px;
+ 	padding-right: 15px;
+}

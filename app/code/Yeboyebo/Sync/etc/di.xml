@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Yeboyebo\Sync\Api\Sales\Orders\SynchronizedInterface" type="Yeboyebo\Sync\Model\Sales\Orders\Synchronized"/>
+    <preference for="Yeboyebo\Sync\Api\Sales\Orders\OrdersInterface" type="Yeboyebo\Sync\Model\Sales\Orders\ListOrders"/>
+    <preference for="Magento\Customer\Model\EmailNotification" type="Yeboyebo\Sync\Model\Customer\Model\EmailNotification" />
+    <preference for="Magento\CatalogUrlRewrite\Model\ProductUrlPathGenerator" type="Yeboyebo\Sync\Model\ProductUrlPathGenerator" />
+</config>
