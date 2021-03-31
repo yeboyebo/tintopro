@@ -1,0 +1,34 @@
+.authorization-link{
+	display: inline-block;
+    position: relative;
+    float: right;
+	margin-top: 10px;
+    margin-right: 5px;
+}
+
+.authorization-link .action{
+	cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.authorization-link .action:before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 22px;
+    line-height: 28px;
+    color: #757575;
+    content: '\e627';
+    font-family: 'luma-icons';
+    margin: 0;
+    vertical-align: top;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+}
+
+.minicart-wrapper .action.showcart .counter.qty {
+    background: lightblue;
+}

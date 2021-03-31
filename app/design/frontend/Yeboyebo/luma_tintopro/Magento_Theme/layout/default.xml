@@ -20,5 +20,18 @@
                 </arguments>
             </block>
         </referenceBlock>
+        <!--NEW-->
+        <move element="authorization-link" destination="header-wrapper" after="minicart" />
+        <referenceBlock name="header.panel.wrapper" remove="true"/>
+
+        <referenceContainer name="header.container">
+           <block class="Magento\Store\Block\Switcher" 
+                name="cambiadorStore" 
+                before="-" 
+                template="Magento_Theme::html/switchstore.phtml"
+            />
+        </referenceContainer>
     </body>
+        
+
 </page>

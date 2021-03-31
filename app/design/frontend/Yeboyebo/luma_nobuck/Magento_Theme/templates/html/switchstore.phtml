@@ -1,0 +1,138 @@
+<?php
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();        
+$storeManager  = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+
+$storeCode = $storeManager->getStore()->getCode();
+$logoNobuck = $this->getViewFileUrl('images/logo-nobuck.jpg');
+$logoTintopro = $this->getViewFileUrl('images/logo-tintopro.jpg');
+
+ ?>
+
+<style>
+.cambiador {
+    position:fixed;
+    left: 0px;
+    width: 10px;
+    height: 100%;
+    transition: all 1s;
+    z-index: 9999;
+}
+.cambiador.active {
+    width: 250px;
+    opacity: 1;
+}
+
+.cambiador .pestana-contenido {
+   width: 100%;
+   visibility: hidden;
+   opacity: 0;
+}
+.cambiador.active .pestana-contenido {
+    width: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.pestana-contenido {
+    height: 100%;
+    width: 250px;
+    background-color: white<?php /*echo ($storeCode == 'n_es') ? '#cba472' : '#352e74';*/ ?>;
+    border-radius: 0px 10px 10px 0px;
+    border-right: 1px solid grey;
+    overflow: hidden;
+    margin-right: 10px;
+    transition: all 1s;
+}
+
+.cambiador-icon {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 70px;
+    right: -35px;
+}
+.cambiador.active .cambiador-icon {
+    color: white;
+    right: -15px;
+}
+.pestana-contenido .linktienda {
+    color: black<?php /*echo ($storeCode == 'n_es') ? 'black' : 'white';*/ ?>;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    display: block;
+}
+.pestana-contenido .linktienda span{
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 2.2rem;
+    text-align: font-family;
+    font-family: 'Open Sans';
+    font-weight: 600;
+}
+.pestana-contenido .contacto {
+    bottom: 0px;
+    position: absolute;
+    width: 250px;
+    padding: 10px;
+}
+
+</style>
+
+
+<div class="cambiador">
+
+    <div class="cambiador-icon"><img src="<?php echo $this->getViewFileUrl('images/desplegar.svg'); ?>" width="100%"/></div>
+
+    <div class="pestana-contenido">
+
+        <?php foreach ($block->getGroups() as $_group) : ?>
+            <?php if (!($_group->getId() == $block->getCurrentGroupId())) : ?>
+                <a class="linktienda" href="#" data-post='<?= $block->getTargetStorePostData($_group->getDefaultStore()) ?>'>
+                    <span><?= ucfirst($block->escapeHtml($_group->getName())) ?></span>
+                    <img src="<?php echo ($_group->getId() == 2) ? $logoNobuck : $logoTintopro; ?>" />
+                </a>
+            <?php endif; ?>
+        <?php endforeach; ?>
+
+        <div class="contacto"> 
+            <?php if ($storeCode == 'n_es'): ?>
+                <p>Email: test@</p>
+                <p>Telefono: 123</p>
+            <?php else: ?>
+                <p>Email: test@</p>
+                <p>Telefono: 123</p>
+            <?php endif; ?>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    require(['jquery'],function($){
+    	$(document).ready(function(){
+
+            $('.cambiador').hover(function (e) {
+                $('.cambiador').addClass('active');
+                console.log('poniendo active');
+            },function (e) {
+                $('.cambiador').removeClass('active');
+                console.log('desponiendo active');
+            });
+
+            $('.cambiador-icon').click(function (e) {
+                $('.cambiador').hasClass('active') ?  $('.cambiador').removeClass('active') :  $('.cambiador').addClass('active');
+                
+            });
+
+        });
+    });
+
+
+</script>
