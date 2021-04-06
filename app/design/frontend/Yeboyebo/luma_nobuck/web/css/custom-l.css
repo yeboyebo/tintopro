@@ -48,3 +48,11 @@
     speak: none;
     text-align: center;
 }
+
+
+
+
+/**/
+.nav-sections-item-content, .nav-sections .navigation {
+    background-color: #cba472;
+}

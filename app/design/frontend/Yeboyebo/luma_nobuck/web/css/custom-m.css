@@ -32,3 +32,10 @@
 .minicart-wrapper .action.showcart .counter.qty {
     background: lightblue;
 }
+
+.page-wrapper {
+    margin-left: 45px !important;
+}
+html.nav-open .cambiador {
+    display: none;
+}

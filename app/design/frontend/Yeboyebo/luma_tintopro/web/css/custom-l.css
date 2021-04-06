@@ -42,3 +42,16 @@
     speak: none;
     text-align: center;
 }
+
+
+
+.nav-sections-item-content, .nav-sections .navigation {
+    background-color: #352e74;
+}
+.navigation>ul > li > a, .navigation>ul > li.level0 > a > span{
+    color: white;
+}
+.navigation .level0 > .level-top {
+    line-height: 30px !important;
+}
+

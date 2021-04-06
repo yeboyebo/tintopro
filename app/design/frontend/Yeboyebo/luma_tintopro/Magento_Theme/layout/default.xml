@@ -20,6 +20,8 @@
                 </arguments>
             </block>
         </referenceBlock>
+
+        
         <!--NEW-->
         <move element="authorization-link" destination="header-wrapper" after="minicart" />
         <referenceBlock name="header.panel.wrapper" remove="true"/>
