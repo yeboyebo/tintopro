@@ -35,12 +35,18 @@
         </referenceContainer>
 
         <referenceBlock name="footer_links">
-         <block class="Magento\Framework\View\Element\Html\Link\Current" name="avisolegal-footer-link">
-             <arguments>
-                 <argument name="label" xsi:type="string">Aviso legal</argument>
-                 <argument name="path" xsi:type="string">aviso-legal</argument>
-             </arguments>
-         </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="avisolegal-footer-link">
+                <arguments>
+                    <argument name="label" xsi:type="string">Aviso legal</argument>
+                    <argument name="path" xsi:type="string">aviso-legal</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="condicionesgenerales-footer-link">
+                <arguments>
+                    <argument name="label" xsi:type="string">Condiciones generales</argument>
+                    <argument name="path" xsi:type="string">condiciones-generales</argument>
+                </arguments>
+            </block>
      </referenceBlock>
     </body>
         
