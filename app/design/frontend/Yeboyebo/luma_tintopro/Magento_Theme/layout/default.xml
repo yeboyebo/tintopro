@@ -33,6 +33,15 @@
                 template="Magento_Theme::html/switchstore.phtml"
             />
         </referenceContainer>
+
+        <referenceBlock name="footer_links">
+         <block class="Magento\Framework\View\Element\Html\Link\Current" name="avisolegal-footer-link">
+             <arguments>
+                 <argument name="label" xsi:type="string">Aviso legal</argument>
+                 <argument name="path" xsi:type="string">aviso-legal</argument>
+             </arguments>
+         </block>
+     </referenceBlock>
     </body>
         
 
